@@ -1,0 +1,23 @@
+{
+  "name": "embercss",
+  "version": "0.0.0",
+  "description": "🔥 EmberCSS — Ignite Modern Web Interfaces.",
+  "keywords": [
+    "ember",
+    "embercss",
+    "css"
+  ],
+  "license": "MIT",
+  "author": "Sushil Kumar",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "lessc src/ember.less dist/ember.css && cleancss -o dist/ember.min.css dist/ember.css",
+    "watch": "less-watch-compiler src dist ember.less"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "less": "^4.3.0",
+    "less-watch-compiler": "^1.16.3"
+  }
+}
