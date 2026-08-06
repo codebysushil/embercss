@@ -12,8 +12,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "build": "lessc src/ember.less dist/ember.css && cleancss -o dist/ember.min.css dist/ember.css",
-    "watch": "less-watch-compiler src dist ember.less"
+    "build": "lessc less/ember.less dist/ember.css && cleancss -o dist/ember.min.css dist/ember.css",
+    "watch": "less-watch-compiler less dist ember.less"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
