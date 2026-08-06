@@ -27,26 +27,22 @@ A lightweight, utility-first + component CSS framework with modern CSS features,
 ```html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="./dist/ember.min.css" />
-        <title>Ember CSS</title>
-    </head>
-    <body>
-        <div class="container my-2 p-4 my-md-3">
-            <div class="row">
-                <div class="col-md-6 col-4">
-                    <h2 class="text-primary text-lg-danger text-center text-bold text-md-3 text-lg-4">
-                        Hello EmberCSS!!
-                    </h2>
-                    <p class="my-3 text-muted">
-                        🔥 EmberCSS — Ignite Modern Web Interfaces.
-                    </p>
-                </div>
-            <div>
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./dist/ember.min.css" />
+    <title>Ember CSS</title>
+</head>
+<body>
+    <div class="container my-2 p-4 my-md-3">
+        <div class="row">
+            <div class="col-md-6 col-4">
+                <h2 class="text-primary text-lg-danger text-center text-bold text-md-3 text-lg-4">Hello EmberCSS!!</h2>
+                <p class="my-3 text-muted">🔥 EmberCSS — Ignite Modern Web Interfaces.</p>
+            </div>
+        <div>
+    </div>
+</body>
 </html>
 ```
