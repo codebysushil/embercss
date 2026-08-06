@@ -5,7 +5,12 @@
   "keywords": [
     "ember",
     "embercss",
-    "css"
+    "css",
+    "utility-first",
+    "components",
+    "lightweight",
+    "mobile-first",
+    "responsive"
   ],
   "license": "MIT",
   "author": "Sushil Kumar",
