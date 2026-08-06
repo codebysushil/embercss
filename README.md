@@ -23,7 +23,7 @@ A lightweight, utility-first + component CSS framework with modern CSS features,
 
 ---
 
-#### Insall by CDN
+#### Starter template
 ```html
 <!DOCTYPE html>
 <html lang="en">
