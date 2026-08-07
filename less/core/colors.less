@@ -1,0 +1,45 @@
+// =======================================
+// Generate Utilities
+// =======================================
+
+.generate-colors(@list, @i: 1) when (@i <= length(@list)) {
+
+    @item: extract(@list, @i);
+
+    @name: extract(@item, 1);
+    @color: extract(@item, 2);
+
+    .text-@{name} {
+        color: @color;
+
+        &:hover,
+        &:focus {
+            color: darken(@color, 10%);
+        }
+    }
+
+    .bg-@{name} {
+        background-color: @color;
+
+        &:hover,
+        &:focus {
+            background-color: darken(@color, 8%);
+        }
+    }
+
+    .border-@{name} {
+        border-color: @color;
+    }
+
+    .fill-@{name} {
+        fill: @color;
+    }
+
+    .stroke-@{name} {
+        stroke: @color;
+    }
+
+    .generate-colors(@list, (@i + 1));
+}
+
+.generate-colors(@list, @i) when (@i > length(@list)) {}

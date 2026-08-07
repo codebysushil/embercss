@@ -112,7 +112,8 @@ button,
   -webkit-appearance: button;
 }
 [type="search"] {
-  -webkit-appearance: text;
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
 }
 /* Firefox */
 button::-moz-focus-inner,
@@ -232,6 +233,12 @@ canvas {
 ::-moz-selection {
   background: #3399ff;
   color: #fff;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 /* ---------------------------------------
    Layout
