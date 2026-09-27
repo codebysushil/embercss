@@ -1,45 +1,514 @@
-// =======================================
-// Generate Utilities
-// =======================================
+//
+// EmberCSS
+// ==========================================================================
+// File: _colors.less
+// Purpose: Complete EmberCSS color system
+//
+// Design:
+//   - Tailwind-style numeric shades
+//   - Material/MUI-style semantic colors
+//   - OKLCH color space
+//   - Light / dark / soft / strong variants
+// ==========================================================================
 
-.generate-colors(@list, @i: 1) when (@i <= length(@list)) {
 
-    @item: extract(@list, @i);
+@layer tokens {
 
-    @name: extract(@item, 1);
-    @color: extract(@item, 2);
+    // ======================================================================
+    // Neutral
+    // ======================================================================
 
-    .text-@{name} {
-        color: @color;
+    @gray-50:  oklch(98% 0.01 250);
+    @gray-100: oklch(96% 0.01 250);
+    @gray-200: oklch(92% 0.01 250);
+    @gray-300: oklch(86% 0.015 250);
+    @gray-400: oklch(70% 0.02 250);
+    @gray-500: oklch(55% 0.025 250);
+    @gray-600: oklch(45% 0.025 250);
+    @gray-700: oklch(35% 0.025 250);
+    @gray-800: oklch(25% 0.025 250);
+    @gray-900: oklch(15% 0.02 250);
+    @gray-950: oklch(8% 0.02 250);
 
-        &:hover,
-        &:focus {
-            color: darken(@color, 10%);
+
+    // ======================================================================
+    // White / Black
+    // ======================================================================
+
+    @white: oklch(100% 0 0);
+    @black: oklch(0% 0 0);
+
+
+    // ======================================================================
+    // Red
+    // ======================================================================
+
+    @red-50:  oklch(97% 0.03 25);
+    @red-100: oklch(93% 0.055 25);
+    @red-200: oklch(87% 0.09 25);
+    @red-300: oklch(79% 0.14 25);
+    @red-400: oklch(69% 0.20 25);
+    @red-500: oklch(60% 0.24 25);
+    @red-600: oklch(52% 0.23 25);
+    @red-700: oklch(44% 0.20 25);
+    @red-800: oklch(36% 0.17 25);
+    @red-900: oklch(28% 0.13 25);
+    @red-950: oklch(18% 0.09 25);
+
+
+    // ======================================================================
+    // Orange
+    // ======================================================================
+
+    @orange-50:  oklch(97% 0.035 45);
+    @orange-100: oklch(94% 0.07 45);
+    @orange-200: oklch(88% 0.12 45);
+    @orange-300: oklch(80% 0.17 45);
+    @orange-400: oklch(72% 0.21 45);
+    @orange-500: oklch(65% 0.23 45);
+    @orange-600: oklch(57% 0.22 45);
+    @orange-700: oklch(49% 0.19 45);
+    @orange-800: oklch(40% 0.16 45);
+    @orange-900: oklch(31% 0.12 45);
+    @orange-950: oklch(20% 0.08 45);
+
+
+    // ======================================================================
+    // Amber
+    // ======================================================================
+
+    @amber-50:  oklch(98% 0.035 80);
+    @amber-100: oklch(95% 0.075 80);
+    @amber-200: oklch(90% 0.13 80);
+    @amber-300: oklch(83% 0.18 80);
+    @amber-400: oklch(76% 0.20 80);
+    @amber-500: oklch(70% 0.19 80);
+    @amber-600: oklch(61% 0.17 80);
+    @amber-700: oklch(52% 0.15 80);
+    @amber-800: oklch(43% 0.12 80);
+    @amber-900: oklch(34% 0.09 80);
+    @amber-950: oklch(23% 0.06 80);
+
+
+    // ======================================================================
+    // Yellow
+    // ======================================================================
+
+    @yellow-50:  oklch(98% 0.035 100);
+    @yellow-100: oklch(96% 0.08 100);
+    @yellow-200: oklch(91% 0.15 100);
+    @yellow-300: oklch(86% 0.19 100);
+    @yellow-400: oklch(81% 0.20 100);
+    @yellow-500: oklch(76% 0.18 100);
+    @yellow-600: oklch(65% 0.16 100);
+    @yellow-700: oklch(54% 0.14 100);
+    @yellow-800: oklch(45% 0.11 100);
+    @yellow-900: oklch(36% 0.08 100);
+    @yellow-950: oklch(24% 0.05 100);
+
+
+    // ======================================================================
+    // Lime
+    // ======================================================================
+
+    @lime-50:  oklch(97% 0.035 120);
+    @lime-100: oklch(93% 0.07 120);
+    @lime-200: oklch(87% 0.13 120);
+    @lime-300: oklch(79% 0.19 120);
+    @lime-400: oklch(70% 0.23 120);
+    @lime-500: oklch(62% 0.24 120);
+    @lime-600: oklch(54% 0.22 120);
+    @lime-700: oklch(46% 0.19 120);
+    @lime-800: oklch(38% 0.16 120);
+    @lime-900: oklch(30% 0.12 120);
+    @lime-950: oklch(20% 0.08 120);
+
+
+    // ======================================================================
+    // Green
+    // ======================================================================
+
+    @green-50:  oklch(97% 0.035 145);
+    @green-100: oklch(93% 0.07 145);
+    @green-200: oklch(87% 0.12 145);
+    @green-300: oklch(78% 0.18 145);
+    @green-400: oklch(68% 0.21 145);
+    @green-500: oklch(60% 0.20 145);
+    @green-600: oklch(52% 0.18 145);
+    @green-700: oklch(44% 0.16 145);
+    @green-800: oklch(36% 0.13 145);
+    @green-900: oklch(28% 0.10 145);
+    @green-950: oklch(18% 0.07 145);
+
+
+    // ======================================================================
+    // Emerald
+    // ======================================================================
+
+    @emerald-50:  oklch(97% 0.035 160);
+    @emerald-100: oklch(93% 0.07 160);
+    @emerald-200: oklch(87% 0.12 160);
+    @emerald-300: oklch(79% 0.17 160);
+    @emerald-400: oklch(69% 0.20 160);
+    @emerald-500: oklch(61% 0.18 160);
+    @emerald-600: oklch(53% 0.16 160);
+    @emerald-700: oklch(45% 0.14 160);
+    @emerald-800: oklch(37% 0.11 160);
+    @emerald-900: oklch(29% 0.08 160);
+    @emerald-950: oklch(19% 0.06 160);
+
+
+    // ======================================================================
+    // Cyan
+    // ======================================================================
+
+    @cyan-50:  oklch(97% 0.035 190);
+    @cyan-100: oklch(93% 0.07 190);
+    @cyan-200: oklch(87% 0.12 190);
+    @cyan-300: oklch(79% 0.17 190);
+    @cyan-400: oklch(70% 0.19 190);
+    @cyan-500: oklch(62% 0.18 190);
+    @cyan-600: oklch(54% 0.16 190);
+    @cyan-700: oklch(46% 0.14 190);
+    @cyan-800: oklch(38% 0.11 190);
+    @cyan-900: oklch(30% 0.08 190);
+    @cyan-950: oklch(20% 0.06 190);
+
+
+    // ======================================================================
+    // Sky
+    // ======================================================================
+
+    @sky-50:  oklch(97% 0.025 215);
+    @sky-100: oklch(93% 0.055 215);
+    @sky-200: oklch(87% 0.10 215);
+    @sky-300: oklch(79% 0.16 215);
+    @sky-400: oklch(69% 0.20 215);
+    @sky-500: oklch(61% 0.20 215);
+    @sky-600: oklch(53% 0.19 215);
+    @sky-700: oklch(45% 0.16 215);
+    @sky-800: oklch(37% 0.13 215);
+    @sky-900: oklch(29% 0.10 215);
+    @sky-950: oklch(19% 0.07 215);
+
+
+    // ======================================================================
+    // Blue
+    // ======================================================================
+
+    @blue-50:  oklch(97% 0.025 245);
+    @blue-100: oklch(93% 0.055 245);
+    @blue-200: oklch(87% 0.10 245);
+    @blue-300: oklch(78% 0.17 245);
+    @blue-400: oklch(68% 0.22 245);
+    @blue-500: oklch(58% 0.25 245);
+    @blue-600: oklch(51% 0.24 245);
+    @blue-700: oklch(43% 0.21 245);
+    @blue-800: oklch(35% 0.17 245);
+    @blue-900: oklch(27% 0.13 245);
+    @blue-950: oklch(18% 0.09 245);
+
+
+    // ======================================================================
+    // Indigo
+    // ======================================================================
+
+    @indigo-50:  oklch(97% 0.025 260);
+    @indigo-100: oklch(93% 0.055 260);
+    @indigo-200: oklch(87% 0.10 260);
+    @indigo-300: oklch(78% 0.17 260);
+    @indigo-400: oklch(68% 0.22 260);
+    @indigo-500: oklch(58% 0.25 260);
+    @indigo-600: oklch(50% 0.24 260);
+    @indigo-700: oklch(42% 0.21 260);
+    @indigo-800: oklch(34% 0.17 260);
+    @indigo-900: oklch(26% 0.13 260);
+    @indigo-950: oklch(17% 0.09 260);
+
+
+    // ======================================================================
+    // Violet
+    // ======================================================================
+
+    @violet-50:  oklch(97% 0.025 285);
+    @violet-100: oklch(93% 0.055 285);
+    @violet-200: oklch(87% 0.10 285);
+    @violet-300: oklch(78% 0.17 285);
+    @violet-400: oklch(68% 0.22 285);
+    @violet-500: oklch(58% 0.25 285);
+    @violet-600: oklch(50% 0.24 285);
+    @violet-700: oklch(42% 0.21 285);
+    @violet-800: oklch(34% 0.17 285);
+    @violet-900: oklch(26% 0.13 285);
+    @violet-950: oklch(17% 0.09 285);
+
+
+    // ======================================================================
+    // Purple
+    // ======================================================================
+
+    @purple-50:  oklch(97% 0.025 300);
+    @purple-100: oklch(93% 0.055 300);
+    @purple-200: oklch(87% 0.10 300);
+    @purple-300: oklch(78% 0.17 300);
+    @purple-400: oklch(68% 0.22 300);
+    @purple-500: oklch(58% 0.25 300);
+    @purple-600: oklch(50% 0.24 300);
+    @purple-700: oklch(42% 0.21 300);
+    @purple-800: oklch(34% 0.17 300);
+    @purple-900: oklch(26% 0.13 300);
+    @purple-950: oklch(17% 0.09 300);
+
+
+    // ======================================================================
+    // Semantic colors — MUI style
+    // ======================================================================
+
+    // Primary
+
+    @primary-light: @blue-400;
+    @primary-main:  @blue-600;
+    @primary-dark:  @blue-800;
+
+    @primary-contrast: @white;
+
+
+    // Secondary
+
+    @secondary-light: @violet-400;
+    @secondary-main:  @violet-600;
+    @secondary-dark:  @violet-800;
+
+    @secondary-contrast: @white;
+
+
+    // Success
+
+    @success-light: @green-400;
+    @success-main:  @green-600;
+    @success-dark:  @green-800;
+
+    @success-contrast: @white;
+
+
+    // Warning
+
+    @warning-light: @amber-400;
+    @warning-main:  @amber-600;
+    @warning-dark:  @amber-800;
+
+    @warning-contrast: @gray-950;
+
+
+    // Error
+
+    @error-light: @red-400;
+    @error-main:  @red-600;
+    @error-dark:  @red-800;
+
+    @error-contrast: @white;
+
+
+    // Info
+
+    @info-light: @sky-400;
+    @info-main:  @sky-600;
+    @info-dark:  @sky-800;
+
+    @info-contrast: @white;
+
+
+    // ======================================================================
+    // Semantic surfaces
+    // ======================================================================
+
+    @background-light: @gray-50;
+    @background-dark:  @gray-950;
+
+    @surface-light: @white;
+    @surface-dark:  @gray-900;
+
+    @surface-variant-light: @gray-100;
+    @surface-variant-dark:  @gray-800;
+
+
+    // ======================================================================
+    // Semantic text
+    // ======================================================================
+
+    @text-primary-light: @gray-900;
+    @text-primary-dark:  @gray-50;
+
+    @text-secondary-light: @gray-600;
+    @text-secondary-dark:  @gray-400;
+
+    @text-disabled-light: @gray-400;
+    @text-disabled-dark:  @gray-600;
+
+
+    // ======================================================================
+    // Semantic borders
+    // ======================================================================
+
+    @border-light: @gray-200;
+    @border-dark:  @gray-700;
+
+    @border-strong-light: @gray-300;
+    @border-strong-dark:  @gray-600;
+
+
+    // ======================================================================
+    // Semantic links
+    // ======================================================================
+
+    @link-light: @blue-700;
+    @link-dark:  @blue-400;
+
+
+    // ======================================================================
+    // Soft semantic backgrounds
+    // ======================================================================
+
+    @primary-soft:
+        color-mix(in oklch, @primary-main 10%, transparent);
+
+    @secondary-soft:
+        color-mix(in oklch, @secondary-main 10%, transparent);
+
+    @success-soft:
+        color-mix(in oklch, @success-main 10%, transparent);
+
+    @warning-soft:
+        color-mix(in oklch, @warning-main 12%, transparent);
+
+    @error-soft:
+        color-mix(in oklch, @error-main 10%, transparent);
+
+    @info-soft:
+        color-mix(in oklch, @info-main 10%, transparent);
+
+
+    // ======================================================================
+    // Strong semantic backgrounds
+    // ======================================================================
+
+    @primary-strong:
+        color-mix(in oklch, @primary-main 85%, black);
+
+    @secondary-strong:
+        color-mix(in oklch, @secondary-main 85%, black);
+
+    @success-strong:
+        color-mix(in oklch, @success-main 85%, black);
+
+    @warning-strong:
+        color-mix(in oklch, @warning-main 85%, black);
+
+    @error-strong:
+        color-mix(in oklch, @error-main 85%, black);
+
+    @info-strong:
+        color-mix(in oklch, @info-main 85%, black);
+
+
+    // ======================================================================
+    // Transparent colors
+    // ======================================================================
+
+    @transparent: transparent;
+
+
+    // ======================================================================
+    // CSS custom property bridge
+    // ======================================================================
+    //
+    // LESS variables are used internally.
+    // CSS variables allow runtime theming.
+    //
+
+    :root {
+
+        // Primary
+
+        --ember-primary-light: @primary-light;
+        --ember-primary: @primary-main;
+        --ember-primary-dark: @primary-dark;
+        --ember-primary-contrast: @primary-contrast;
+
+
+        // Secondary
+
+        --ember-secondary-light: @secondary-light;
+        --ember-secondary: @secondary-main;
+        --ember-secondary-dark: @secondary-dark;
+        --ember-secondary-contrast: @secondary-contrast;
+
+
+        // Status
+
+        --ember-success-light: @success-light;
+        --ember-success: @success-main;
+        --ember-success-dark: @success-dark;
+
+        --ember-warning-light: @warning-light;
+        --ember-warning: @warning-main;
+        --ember-warning-dark: @warning-dark;
+
+        --ember-error-light: @error-light;
+        --ember-error: @error-main;
+        --ember-error-dark: @error-dark;
+
+        --ember-info-light: @info-light;
+        --ember-info: @info-main;
+        --ember-info-dark: @info-dark;
+
+
+        // Surfaces
+
+        --ember-background: @background-light;
+        --ember-surface: @surface-light;
+        --ember-surface-variant: @surface-variant-light;
+
+
+        // Text
+
+        --ember-text-primary: @text-primary-light;
+        --ember-text-secondary: @text-secondary-light;
+        --ember-text-disabled: @text-disabled-light;
+
+
+        // Borders
+
+        --ember-border: @border-light;
+        --ember-border-strong: @border-strong-light;
+
+
+        // Link
+
+        --ember-link: @link-light;
+    }
+
+
+    // ======================================================================
+    // Automatic dark mode
+    // ======================================================================
+
+    @media (prefers-color-scheme: dark) {
+
+        :root {
+
+            --ember-background: @background-dark;
+            --ember-surface: @surface-dark;
+            --ember-surface-variant: @surface-variant-dark;
+
+            --ember-text-primary: @text-primary-dark;
+            --ember-text-secondary: @text-secondary-dark;
+            --ember-text-disabled: @text-disabled-dark;
+
+            --ember-border: @border-dark;
+            --ember-border-strong: @border-strong-dark;
+
+            --ember-link: @link-dark;
         }
     }
-
-    .bg-@{name} {
-        background-color: @color;
-
-        &:hover,
-        &:focus {
-            background-color: darken(@color, 8%);
-        }
-    }
-
-    .border-@{name} {
-        border-color: @color;
-    }
-
-    .fill-@{name} {
-        fill: @color;
-    }
-
-    .stroke-@{name} {
-        stroke: @color;
-    }
-
-    .generate-colors(@list, (@i + 1));
 }
-
-.generate-colors(@list, @i) when (@i > length(@list)) {}

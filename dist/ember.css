@@ -9,236 +9,348 @@
 /* ---------------------------------------
    Configuration
    --------------------------------------- */
+@layer tokens {
+  :root {
+    --ember-primary-light: oklch(68% 0.22 245);
+    --ember-primary: oklch(51% 0.24 245);
+    --ember-primary-dark: oklch(35% 0.17 245);
+    --ember-primary-contrast: oklch(100% 0 0);
+    --ember-secondary-light: oklch(68% 0.22 285);
+    --ember-secondary: oklch(50% 0.24 285);
+    --ember-secondary-dark: oklch(34% 0.17 285);
+    --ember-secondary-contrast: oklch(100% 0 0);
+    --ember-success-light: oklch(68% 0.21 145);
+    --ember-success: oklch(52% 0.18 145);
+    --ember-success-dark: oklch(36% 0.13 145);
+    --ember-warning-light: oklch(76% 0.2 80);
+    --ember-warning: oklch(61% 0.17 80);
+    --ember-warning-dark: oklch(43% 0.12 80);
+    --ember-error-light: oklch(69% 0.2 25);
+    --ember-error: oklch(52% 0.23 25);
+    --ember-error-dark: oklch(36% 0.17 25);
+    --ember-info-light: oklch(69% 0.2 215);
+    --ember-info: oklch(53% 0.19 215);
+    --ember-info-dark: oklch(37% 0.13 215);
+    --ember-background: oklch(98% 0.01 250);
+    --ember-surface: oklch(100% 0 0);
+    --ember-surface-variant: oklch(96% 0.01 250);
+    --ember-text-primary: oklch(15% 0.02 250);
+    --ember-text-secondary: oklch(45% 0.025 250);
+    --ember-text-disabled: oklch(70% 0.02 250);
+    --ember-border: oklch(92% 0.01 250);
+    --ember-border-strong: oklch(86% 0.015 250);
+    --ember-link: oklch(43% 0.21 245);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ember-background: oklch(8% 0.02 250);
+      --ember-surface: oklch(15% 0.02 250);
+      --ember-surface-variant: oklch(25% 0.025 250);
+      --ember-text-primary: oklch(98% 0.01 250);
+      --ember-text-secondary: oklch(70% 0.02 250);
+      --ember-text-disabled: oklch(45% 0.025 250);
+      --ember-border: oklch(35% 0.025 250);
+      --ember-border-strong: oklch(45% 0.025 250);
+      --ember-link: oklch(68% 0.22 245);
+    }
+  }
+}
 /* ---------------------------------------
    Base
    --------------------------------------- */
-html {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-scroll-behavior: smooth;
-  -moz-scroll-behavior: smooth;
-  -ms-scroll-behavior: smooth;
-  scroll-behavior: smooth;
-}
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-}
-/* HTML */
-html {
-  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-/* Body */
-body {
-  margin: 0;
-  padding: 0;
-}
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-figure,
-dl,
-dd {
-  margin: 0;
-}
-ul,
-ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-/* Links */
-a {
-  color: inherit;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:hover,
-a:focus {
-  color: inherit;
-  text-decoration: underline;
-}
-/* Images */
-img {
-  border: 0;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-/* SVG */
-svg {
-  overflow: hidden;
-  vertical-align: middle;
-}
-/* Tables */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-/* Forms */
-button,
-input,
-optgroup,
-select,
-textarea {
-  margin: 0;
-  padding: 0;
-  font: inherit;
-  color: inherit;
-  background: transparent;
-  border: 0;
-  outline: 0;
-}
-/* Button */
-button,
-[type="button"],
-[type="submit"],
-[type="reset"] {
-  cursor: pointer;
-  -webkit-appearance: button;
-}
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-/* Firefox */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-/* Textarea */
-textarea {
-  overflow: auto;
-  resize: vertical;
-}
-/* Checkbox & Radio */
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-/* HR */
-hr {
-  height: 0;
-  overflow: visible;
-  border: 0;
-  border-top: 1px solid #ddd;
-}
-/* Code */
-code,
-kbd,
-samp,
-pre {
-  font-family: Consolas, "Courier New", monospace;
-}
-/* Small */
-small {
-  font-size: 80%;
-}
-/* Sub/Sup */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sub {
-  bottom: -0.25em;
-}
-sup {
-  top: -0.5em;
-}
-/* Hidden */
-[hidden] {
-  display: none;
-}
-/* Template */
-template {
-  display: none;
-}
-/* Details */
-details {
-  display: block;
-}
-summary {
-  display: list-item;
-}
-/* Progress */
-progress {
-  vertical-align: baseline;
-}
-/* Abbreviation */
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-}
-/* Strong */
-b,
-strong {
-  font-weight: bold;
-}
-/* Mark */
-mark {
-  background: #ff0;
-  color: #000;
-}
-/* Fieldset */
-fieldset {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-/* Legend */
-legend {
-  display: table;
-  max-width: 100%;
-  white-space: normal;
-  color: inherit;
-}
-/* Iframe */
-iframe {
-  border: 0;
-}
-/* Audio / Video */
-audio,
-video {
-  display: inline-block;
-  max-width: 100%;
-}
-/* Canvas */
-canvas {
-  display: inline-block;
-}
-/* Selection */
-::selection {
-  background: #3399ff;
-  color: #fff;
-}
-::-moz-selection {
-  background: #3399ff;
-  color: #fff;
-}
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+/* ==========================================================================
+   EmberCSS
+   Modern CSS Framework
+   --------------------------------------------------------------------------
+   File: _reset.less
+   Purpose: Cross-browser CSS normalization and sensible defaults
+   ========================================================================== */
+@layer reset {
+  /* ----------------------------------------------------------------------
+       Box sizing
+       ---------------------------------------------------------------------- */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  /* ----------------------------------------------------------------------
+       Document
+       ---------------------------------------------------------------------- */
+  html {
+    min-height: 100%;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+  }
+  /* ----------------------------------------------------------------------
+       Sections
+       ---------------------------------------------------------------------- */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin-block: 0;
+  }
+  /* ----------------------------------------------------------------------
+       Headings
+       ---------------------------------------------------------------------- */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    text-wrap: balance;
+  }
+  /* ----------------------------------------------------------------------
+       Text
+       ---------------------------------------------------------------------- */
+  p {
+    text-wrap: pretty;
+  }
+  abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+  }
+  b,
+  strong {
+    font-weight: bolder;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub,
+  sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  /* ----------------------------------------------------------------------
+       Lists
+       ---------------------------------------------------------------------- */
+  ul,
+  ol {
+    margin-block: 0;
+    padding-inline-start: 2rem;
+  }
+  nav ul,
+  nav ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  /* ----------------------------------------------------------------------
+       Links
+       ---------------------------------------------------------------------- */
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+  a:not([class]) {
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.15em;
+  }
+  /* ----------------------------------------------------------------------
+       Media
+       ---------------------------------------------------------------------- */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+  img,
+  picture,
+  video {
+    height: auto;
+  }
+  img {
+    border-style: none;
+  }
+  svg {
+    overflow: hidden;
+  }
+  svg:not([fill]) {
+    fill: currentColor;
+  }
+  /* ----------------------------------------------------------------------
+       Forms
+       ---------------------------------------------------------------------- */
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    margin: 0;
+    font: inherit;
+    line-height: inherit;
+  }
+  button,
+  select {
+    text-transform: none;
+  }
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    appearance: button;
+    -webkit-appearance: button;
+    cursor: pointer;
+  }
+  button:disabled,
+  [type="button"]:disabled,
+  [type="reset"]:disabled,
+  [type="submit"]:disabled {
+    cursor: not-allowed;
+  }
+  textarea {
+    resize: vertical;
+  }
+  textarea:not([rows]) {
+    min-height: 8rem;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  legend {
+    padding: 0;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  [type="search"] {
+    appearance: textfield;
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+  }
+  [type="search"]::-webkit-search-decoration,
+  [type="search"]::-webkit-search-cancel-button {
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  ::-webkit-file-upload-button {
+    font: inherit;
+    appearance: button;
+    -webkit-appearance: button;
+  }
+  /* ----------------------------------------------------------------------
+       Tables
+       ---------------------------------------------------------------------- */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-indent: 0;
+  }
+  caption {
+    text-align: start;
+  }
+  /* ----------------------------------------------------------------------
+       Interactive elements
+       ---------------------------------------------------------------------- */
+  summary {
+    display: list-item;
+    cursor: pointer;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  /* ----------------------------------------------------------------------
+       Code
+       ---------------------------------------------------------------------- */
+  pre,
+  code,
+  kbd,
+  samp {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 1em;
+  }
+  pre {
+    overflow: auto;
+    margin-block: 0;
+  }
+  /* ----------------------------------------------------------------------
+       Quotes
+       ---------------------------------------------------------------------- */
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote::before,
+  blockquote::after,
+  q::before,
+  q::after {
+    content: none;
+  }
+  /* ----------------------------------------------------------------------
+       Focus
+       ---------------------------------------------------------------------- */
+  :focus {
+    outline: none;
+  }
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+  /* ----------------------------------------------------------------------
+       Selection
+       ---------------------------------------------------------------------- */
+  ::selection {
+    background: Highlight;
+    color: HighlightText;
+  }
+  /* ----------------------------------------------------------------------
+       Reduced motion
+       ---------------------------------------------------------------------- */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 /* ---------------------------------------
    Layout

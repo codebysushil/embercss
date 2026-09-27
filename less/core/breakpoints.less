@@ -1,0 +1,262 @@
+//
+// EmberCSS
+// ------------------------------------------------------------
+// File: _breakpoint.less
+// Purpose: Responsive breakpoint system
+// ------------------------------------------------------------
+
+//
+// Breakpoints
+// ------------------------------------------------------------
+//
+// These represent layout states, not physical device types.
+//
+// mobile     : < 640px
+// tablet     : 640px  - 1023px
+// laptop     : 1024px - 1279px
+// desktop    : 1280px - 1535px
+// hdscreen   : >= 1536px
+//
+
+@bp-mobile: 0rem;
+@bp-tablet: 40rem;       // 640px
+@bp-laptop: 64rem;       // 1024px
+@bp-desktop: 80rem;      // 1280px
+@bp-hdscreen: 96rem;     // 1536px
+
+
+//
+// Breakpoint upper bounds
+// ------------------------------------------------------------
+//
+// The small fractional subtraction prevents overlapping ranges.
+//
+
+@bp-mobile-max: 39.99rem;
+@bp-tablet-max: 63.99rem;
+@bp-laptop-max: 79.99rem;
+@bp-desktop-max: 95.99rem;
+
+
+// ============================================================
+// Mobile
+// ============================================================
+
+@media-mobile: ~"(max-width: @{bp-mobile-max})";
+
+
+// ============================================================
+// Tablet
+// ============================================================
+
+@media-tablet: ~"(min-width: @{bp-tablet}) and (max-width: @{bp-tablet-max})";
+
+
+// ============================================================
+// Laptop
+// ============================================================
+
+@media-laptop: ~"(min-width: @{bp-laptop}) and (max-width: @{bp-laptop-max})";
+
+
+// ============================================================
+// Desktop
+// ============================================================
+
+@media-desktop: ~"(min-width: @{bp-desktop}) and (max-width: @{bp-desktop-max})";
+
+
+// ============================================================
+// HD Screen
+// ============================================================
+
+@media-hdscreen: ~"(min-width: @{bp-hdscreen})";
+
+
+// ============================================================
+// Minimum-width breakpoints
+// ============================================================
+
+@media-min-tablet: ~"(min-width: @{bp-tablet})";
+
+@media-min-laptop: ~"(min-width: @{bp-laptop})";
+
+@media-min-desktop: ~"(min-width: @{bp-desktop})";
+
+@media-min-hdscreen: ~"(min-width: @{bp-hdscreen})";
+
+
+// ============================================================
+// Maximum-width breakpoints
+// ============================================================
+
+@media-max-mobile: ~"(max-width: @{bp-mobile-max})";
+
+@media-max-tablet: ~"(max-width: @{bp-tablet-max})";
+
+@media-max-laptop: ~"(max-width: @{bp-laptop-max})";
+
+@media-max-desktop: ~"(max-width: @{bp-desktop-max})";
+
+
+// ============================================================
+// Generic breakpoint mixins
+// ============================================================
+
+.respond-mobile() {
+    @media (max-width: @bp-mobile-max) {
+        .-rules();
+    }
+}
+
+.respond-tablet() {
+    @media (min-width: @bp-tablet) and
+           (max-width: @bp-tablet-max) {
+        .-rules();
+    }
+}
+
+.respond-laptop() {
+    @media (min-width: @bp-laptop) and
+           (max-width: @bp-laptop-max) {
+        .-rules();
+    }
+}
+
+.respond-desktop() {
+    @media (min-width: @bp-desktop) and
+           (max-width: @bp-desktop-max) {
+        .-rules();
+    }
+}
+
+.respond-hdscreen() {
+    @media (min-width: @bp-hdscreen) {
+        .-rules();
+    }
+}
+
+
+// ============================================================
+// Minimum breakpoint mixins
+// ============================================================
+
+.respond-up-tablet() {
+    @media (min-width: @bp-tablet) {
+        .-rules();
+    }
+}
+
+.respond-up-laptop() {
+    @media (min-width: @bp-laptop) {
+        .-rules();
+    }
+}
+
+.respond-up-desktop() {
+    @media (min-width: @bp-desktop) {
+        .-rules();
+    }
+}
+
+.respond-up-hdscreen() {
+    @media (min-width: @bp-hdscreen) {
+        .-rules();
+    }
+}
+
+
+// ============================================================
+// Maximum breakpoint mixins
+// ============================================================
+
+.respond-down-tablet() {
+    @media (max-width: @bp-tablet-max) {
+        .-rules();
+    }
+}
+
+.respond-down-laptop() {
+    @media (max-width: @bp-laptop-max) {
+        .-rules();
+    }
+}
+
+.respond-down-desktop() {
+    @media (max-width: @bp-desktop-max) {
+        .-rules();
+    }
+}
+
+
+// ============================================================
+// Container query breakpoints
+// ============================================================
+//
+// EmberCSS uses container queries for components/layouts
+// wherever possible. These are intentionally separate from
+// viewport media queries.
+//
+
+@cq-tablet: 40rem;
+@cq-laptop: 64rem;
+@cq-desktop: 80rem;
+@cq-hdscreen: 96rem;
+
+
+// ============================================================
+// Container query mixins
+// ============================================================
+
+.container-tablet() {
+    @container (min-width: @cq-tablet) {
+        .-rules();
+    }
+}
+
+.container-laptop() {
+    @container (min-width: @cq-laptop) {
+        .-rules();
+    }
+}
+
+.container-desktop() {
+    @container (min-width: @cq-desktop) {
+        .-rules();
+    }
+}
+
+.container-hdscreen() {
+    @container (min-width: @cq-hdscreen) {
+        .-rules();
+    }
+}
+
+
+// ============================================================
+// Named container query mixins
+// ============================================================
+
+.container-name-tablet(@name) {
+    @container @{name} (min-width: @cq-tablet) {
+        .-rules();
+    }
+}
+
+.container-name-laptop(@name) {
+    @container @{name} (min-width: @cq-laptop) {
+        .-rules();
+    }
+}
+
+.container-name-desktop(@name) {
+    @container @{name} (min-width: @cq-desktop) {
+        .-rules();
+    }
+}
+
+.container-name-hdscreen(@name) {
+    @container @{name} (min-width: @cq-hdscreen) {
+        .-rules();
+    }
+}

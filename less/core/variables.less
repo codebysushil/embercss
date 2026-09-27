@@ -1,11 +1,779 @@
-@primary: #4f46e5;
-@primary-hover: #4338ca;
-@secondary: #64748b;
-@success: #16a34a;
-@danger: #dc2626;
-@warning: #f59e0b;
-@info: #0ea5e9;
-@bg: #ffffff;
-@dark: #222111;
-@white: #ffffff;
-@black: #000000;
+//
+// EmberCSS
+// ==========================================================================
+// File: _variables.less
+// Purpose: Core design tokens
+// ==========================================================================
+
+
+// ==========================================================================
+// 1. CSS / Framework
+// ==========================================================================
+
+@framework-name: "EmberCSS";
+@framework-version: "1.0.0";
+
+
+// ==========================================================================
+// 2. Font Families
+// ==========================================================================
+
+@font-family-sans:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+@font-family-serif:
+    ui-serif,
+    Georgia,
+    Cambria,
+    "Times New Roman",
+    Times,
+    serif;
+
+@font-family-mono:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
+
+@font-family-display: @font-family-sans;
+@font-family-body: @font-family-sans;
+@font-family-code: @font-family-mono;
+
+
+// ==========================================================================
+// 3. Font Weights
+// ==========================================================================
+
+@font-weight-thin: 100;
+@font-weight-extralight: 200;
+@font-weight-light: 300;
+@font-weight-normal: 400;
+@font-weight-medium: 500;
+@font-weight-semibold: 600;
+@font-weight-bold: 700;
+@font-weight-extrabold: 800;
+@font-weight-black: 900;
+
+
+// ==========================================================================
+// 4. Font Sizes
+// ==========================================================================
+
+@font-size-xs: 0.75rem;       // 12px
+@font-size-sm: 0.875rem;      // 14px
+@font-size-md: 1rem;          // 16px
+@font-size-lg: 1.125rem;      // 18px
+@font-size-xl: 1.25rem;       // 20px
+@font-size-2xl: 1.5rem;       // 24px
+@font-size-3xl: 1.875rem;     // 30px
+@font-size-4xl: 2.25rem;      // 36px
+@font-size-5xl: 3rem;         // 48px
+@font-size-6xl: 3.75rem;      // 60px
+@font-size-7xl: 4.5rem;       // 72px
+@font-size-8xl: 6rem;         // 96px
+
+
+// Responsive typography
+
+@font-size-body:
+    clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+
+@font-size-h1:
+    clamp(2.25rem, 1.5rem + 3vw, 4rem);
+
+@font-size-h2:
+    clamp(1.875rem, 1.4rem + 2vw, 3rem);
+
+@font-size-h3:
+    clamp(1.5rem, 1.2rem + 1vw, 2rem);
+
+@font-size-h4:
+    clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+
+@font-size-h5:
+    clamp(1.125rem, 1rem + 0.35vw, 1.25rem);
+
+@font-size-h6:
+    clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+
+
+// ==========================================================================
+// 5. Line Heights
+// ==========================================================================
+
+@line-height-none: 1;
+@line-height-tight: 1.1;
+@line-height-snug: 1.25;
+@line-height-normal: 1.5;
+@line-height-relaxed: 1.625;
+@line-height-loose: 2;
+
+
+// ==========================================================================
+// 6. Letter Spacing
+// ==========================================================================
+
+@letter-spacing-tighter: -0.05em;
+@letter-spacing-tight: -0.025em;
+@letter-spacing-normal: 0;
+@letter-spacing-wide: 0.025em;
+@letter-spacing-wider: 0.05em;
+@letter-spacing-widest: 0.1em;
+
+
+// ==========================================================================
+// 7. Spacing
+// ==========================================================================
+
+@space-0: 0;
+@space-1: 0.25rem;     // 4px
+@space-2: 0.5rem;      // 8px
+@space-3: 0.75rem;     // 12px
+@space-4: 1rem;         // 16px
+@space-5: 1.25rem;      // 20px
+@space-6: 1.5rem;       // 24px
+@space-7: 1.75rem;      // 28px
+@space-8: 2rem;         // 32px
+@space-9: 2.25rem;      // 36px
+@space-10: 2.5rem;      // 40px
+@space-11: 2.75rem;     // 44px
+@space-12: 3rem;        // 48px
+@space-14: 3.5rem;      // 56px
+@space-16: 4rem;        // 64px
+@space-20: 5rem;        // 80px
+@space-24: 6rem;        // 96px
+@space-28: 7rem;        // 112px
+@space-32: 8rem;        // 128px
+
+
+// Fluid spacing
+
+@space-xs:
+    clamp(0.25rem, 0.2rem + 0.2vw, 0.5rem);
+
+@space-sm:
+    clamp(0.5rem, 0.4rem + 0.3vw, 0.75rem);
+
+@space-md:
+    clamp(0.75rem, 0.6rem + 0.5vw, 1rem);
+
+@space-lg:
+    clamp(1rem, 0.8rem + 0.8vw, 1.5rem);
+
+@space-xl:
+    clamp(1.5rem, 1rem + 1.5vw, 2.5rem);
+
+@space-2xl:
+    clamp(2rem, 1.5rem + 2vw, 4rem);
+
+@space-3xl:
+    clamp(3rem, 2rem + 4vw, 6rem);
+
+
+// ==========================================================================
+// 8. Colors
+// ==========================================================================
+
+// Neutral
+
+@color-white: oklch(100% 0 0);
+@color-black: oklch(0% 0 0);
+
+@color-gray-50:  oklch(98% 0 0);
+@color-gray-100: oklch(96% 0 0);
+@color-gray-200: oklch(92% 0 0);
+@color-gray-300: oklch(86% 0 0);
+@color-gray-400: oklch(70% 0 0);
+@color-gray-500: oklch(55% 0 0);
+@color-gray-600: oklch(45% 0 0);
+@color-gray-700: oklch(35% 0 0);
+@color-gray-800: oklch(25% 0 0);
+@color-gray-900: oklch(15% 0 0);
+@color-gray-950: oklch(8% 0 0);
+
+
+// Brand
+
+@color-primary: oklch(55% 0.22 255);
+@color-secondary: oklch(60% 0.16 285);
+
+@color-success: oklch(65% 0.18 145);
+@color-warning: oklch(80% 0.17 85);
+@color-danger: oklch(60% 0.22 25);
+@color-info: oklch(70% 0.15 220);
+
+
+// Semantic
+
+@color-background:
+    light-dark(@color-white, @color-gray-950);
+
+@color-surface:
+    light-dark(@color-gray-50, @color-gray-900);
+
+@color-surface-raised:
+    light-dark(@color-white, @color-gray-800);
+
+@color-text:
+    light-dark(@color-gray-900, @color-gray-100);
+
+@color-muted:
+    light-dark(@color-gray-600, @color-gray-400);
+
+@color-border:
+    light-dark(@color-gray-200, @color-gray-700);
+
+@color-border-strong:
+    light-dark(@color-gray-300, @color-gray-600);
+
+@color-on-primary: @color-white;
+@color-on-secondary: @color-white;
+@color-on-success: @color-white;
+@color-on-danger: @color-white;
+@color-on-info: @color-white;
+
+
+// Color variants
+
+@color-primary-hover:
+    color-mix(in oklch, @color-primary 85%, black);
+
+@color-primary-active:
+    color-mix(in oklch, @color-primary 75%, black);
+
+@color-primary-soft:
+    color-mix(in oklch, @color-primary 12%, transparent);
+
+@color-secondary-soft:
+    color-mix(in oklch, @color-secondary 12%, transparent);
+
+@color-success-soft:
+    color-mix(in oklch, @color-success 12%, transparent);
+
+@color-warning-soft:
+    color-mix(in oklch, @color-warning 15%, transparent);
+
+@color-danger-soft:
+    color-mix(in oklch, @color-danger 12%, transparent);
+
+@color-info-soft:
+    color-mix(in oklch, @color-info 12%, transparent);
+
+
+// ==========================================================================
+// 9. Border
+// ==========================================================================
+
+@border-width-0: 0;
+@border-width-thin: 1px;
+@border-width-medium: 2px;
+@border-width-thick: 4px;
+
+@border-width: @border-width-thin;
+
+@border-style: solid;
+
+@border-default:
+    @border-width @border-style @color-border;
+
+@border-strong:
+    @border-width @border-style @color-border-strong;
+
+
+// ==========================================================================
+// 10. Border Radius
+// ==========================================================================
+
+@radius-none: 0;
+@radius-xs: 0.125rem;       // 2px
+@radius-sm: 0.25rem;        // 4px
+@radius-md: 0.375rem;       // 6px
+@radius-lg: 0.5rem;         // 8px
+@radius-xl: 0.75rem;        // 12px
+@radius-2xl: 1rem;          // 16px
+@radius-3xl: 1.5rem;        // 24px
+@radius-full: 9999px;
+
+
+// ==========================================================================
+// 11. Shadows
+// ==========================================================================
+
+@shadow-none: none;
+
+@shadow-xs:
+    0 1px 2px rgb(0 0 0 / 0.05);
+
+@shadow-sm:
+    0 1px 3px rgb(0 0 0 / 0.1),
+    0 1px 2px rgb(0 0 0 / 0.06);
+
+@shadow-md:
+    0 4px 6px rgb(0 0 0 / 0.1),
+    0 2px 4px rgb(0 0 0 / 0.06);
+
+@shadow-lg:
+    0 10px 15px rgb(0 0 0 / 0.1),
+    0 4px 6px rgb(0 0 0 / 0.05);
+
+@shadow-xl:
+    0 20px 25px rgb(0 0 0 / 0.1),
+    0 10px 10px rgb(0 0 0 / 0.04);
+
+@shadow-2xl:
+    0 25px 50px rgb(0 0 0 / 0.15);
+
+
+// ==========================================================================
+// 12. Container Sizes
+// ==========================================================================
+
+@container-xs: 20rem;       // 320px
+@container-sm: 30rem;       // 480px
+@container-md: 40rem;       // 640px
+@container-lg: 48rem;       // 768px
+@container-xl: 64rem;       // 1024px
+@container-2xl: 75rem;      // 1200px
+@container-3xl: 80rem;      // 1280px
+@container-4xl: 90rem;      // 1440px
+@container-5xl: 96rem;      // 1536px
+
+
+// Page content
+
+@content-width:
+    min(100% - 2rem, @container-3xl);
+
+@content-readable:
+    min(100%, 65ch);
+
+
+// ==========================================================================
+// 13. Layout
+// ==========================================================================
+
+@layout-gap: @space-4;
+
+@grid-gap: @space-4;
+
+@component-gap:
+    clamp(1rem, 2cqw, 2rem);
+
+@container-padding-inline: @space-4;
+@container-padding-block: @space-2;
+
+@page-margin-inline: @space-4;
+@page-margin-block: @space-2;
+
+
+// ==========================================================================
+// 14. Grid
+// ==========================================================================
+
+@grid-columns: 12;
+
+@grid-mobile-columns: 1;
+@grid-tablet-columns: 2;
+@grid-laptop-columns: 3;
+@grid-desktop-columns: 3;
+@grid-hdscreen-columns: 4;
+
+
+// ==========================================================================
+// 15. Sizing
+// ==========================================================================
+
+@size-0: 0;
+@size-1: 0.25rem;
+@size-2: 0.5rem;
+@size-3: 0.75rem;
+@size-4: 1rem;
+@size-5: 1.25rem;
+@size-6: 1.5rem;
+@size-8: 2rem;
+@size-10: 2.5rem;
+@size-12: 3rem;
+@size-16: 4rem;
+@size-20: 5rem;
+@size-24: 6rem;
+@size-32: 8rem;
+@size-40: 10rem;
+@size-48: 12rem;
+@size-64: 16rem;
+
+
+// ==========================================================================
+// 16. Icon Sizes
+// ==========================================================================
+
+@icon-xs: 0.75rem;
+@icon-sm: 1rem;
+@icon-md: 1.25rem;
+@icon-lg: 1.5rem;
+@icon-xl: 2rem;
+@icon-2xl: 2.5rem;
+@icon-3xl: 3rem;
+
+
+// ==========================================================================
+// 17. Avatar Sizes
+// ==========================================================================
+
+@avatar-xs: 1.5rem;
+@avatar-sm: 2rem;
+@avatar-md: 2.5rem;
+@avatar-lg: 3rem;
+@avatar-xl: 4rem;
+@avatar-2xl: 5rem;
+@avatar-3xl: 6rem;
+
+
+// ==========================================================================
+// 18. Z-Index
+// ==========================================================================
+
+@z-behind: -1;
+@z-base: 0;
+@z-raised: 1;
+@z-dropdown: 1000;
+@z-sticky: 1100;
+@z-fixed: 1200;
+@z-overlay: 1300;
+@z-modal: 1400;
+@z-popover: 1500;
+@z-tooltip: 1600;
+@z-toast: 1700;
+
+
+// ==========================================================================
+// 19. Transitions
+// ==========================================================================
+
+@transition-fast: 100ms;
+@transition-normal: 200ms;
+@transition-slow: 300ms;
+@transition-slower: 500ms;
+
+@transition-easing:
+    cubic-bezier(0.4, 0, 0.2, 1);
+
+@transition-ease-in:
+    cubic-bezier(0.4, 0, 1, 1);
+
+@transition-ease-out:
+    cubic-bezier(0, 0, 0.2, 1);
+
+@transition-ease-in-out:
+    cubic-bezier(0.4, 0, 0.2, 1);
+
+@transition-standard:
+    all @transition-normal @transition-easing;
+
+
+// ==========================================================================
+// 20. Aspect Ratios
+// ==========================================================================
+
+@aspect-square: 1 / 1;
+@aspect-video: 16 / 9;
+@aspect-wide: 21 / 9;
+@aspect-photo: 4 / 3;
+@aspect-portrait: 3 / 4;
+@aspect-golden: 1.618 / 1;
+
+
+// ==========================================================================
+// 21. Opacity
+// ==========================================================================
+
+@opacity-0: 0;
+@opacity-5: 0.05;
+@opacity-10: 0.1;
+@opacity-20: 0.2;
+@opacity-25: 0.25;
+@opacity-30: 0.3;
+@opacity-40: 0.4;
+@opacity-50: 0.5;
+@opacity-60: 0.6;
+@opacity-70: 0.7;
+@opacity-75: 0.75;
+@opacity-80: 0.8;
+@opacity-90: 0.9;
+@opacity-95: 0.95;
+@opacity-100: 1;
+
+
+// ==========================================================================
+// 22. Blur
+// ==========================================================================
+
+@blur-none: 0;
+@blur-sm: 4px;
+@blur-md: 8px;
+@blur-lg: 16px;
+@blur-xl: 24px;
+@blur-2xl: 40px;
+@blur-3xl: 64px;
+
+
+// ==========================================================================
+// 23. Backdrop Blur
+// ==========================================================================
+
+@backdrop-blur-sm: 4px;
+@backdrop-blur-md: 8px;
+@backdrop-blur-lg: 16px;
+@backdrop-blur-xl: 24px;
+@backdrop-blur-2xl: 40px;
+
+
+// ==========================================================================
+// 24. Motion
+// ==========================================================================
+
+@motion-distance-sm: 0.25rem;
+@motion-distance-md: 0.5rem;
+@motion-distance-lg: 1rem;
+@motion-distance-xl: 2rem;
+
+@motion-scale-sm: 0.98;
+@motion-scale-md: 0.95;
+@motion-scale-lg: 0.9;
+
+
+// ==========================================================================
+// 25. Form Controls
+// ==========================================================================
+
+@control-height-sm: 2rem;
+@control-height-md: 2.5rem;
+@control-height-lg: 3rem;
+
+@control-padding-inline:
+    @space-3;
+
+@control-padding-block:
+    @space-2;
+
+@control-radius:
+    @radius-md;
+
+@control-border:
+    @border-default;
+
+@control-background:
+    @color-background;
+
+@control-color:
+    @color-text;
+
+
+// ==========================================================================
+// 26. Buttons
+// ==========================================================================
+
+@button-height-sm: 2rem;
+@button-height-md: 2.5rem;
+@button-height-lg: 3rem;
+
+@button-padding-inline-sm: @space-3;
+@button-padding-inline-md: @space-4;
+@button-padding-inline-lg: @space-5;
+
+@button-radius: @radius-md;
+@button-font-weight: @font-weight-medium;
+
+
+// ==========================================================================
+// 27. Cards
+// ==========================================================================
+
+@card-padding: @space-4;
+@card-radius: @radius-lg;
+@card-border: @border-default;
+@card-background: @color-surface;
+@card-shadow: @shadow-sm;
+
+
+// ==========================================================================
+// 28. Modal
+// ==========================================================================
+
+@modal-width-sm: 24rem;
+@modal-width-md: 32rem;
+@modal-width-lg: 48rem;
+@modal-width-xl: 64rem;
+
+@modal-radius: @radius-xl;
+@modal-shadow: @shadow-2xl;
+
+
+// ==========================================================================
+// 29. Navbar
+// ==========================================================================
+
+@navbar-height: 4rem;
+@navbar-padding-inline: @space-4;
+@navbar-background: @color-surface;
+@navbar-border: @border-default;
+@navbar-z-index: @z-sticky;
+
+
+// ==========================================================================
+// 30. Focus Ring
+// ==========================================================================
+
+@focus-width: 2px;
+@focus-offset: 3px;
+@focus-color: @color-primary;
+
+@focus-ring:
+    @focus-width solid @focus-color;
+
+
+// ==========================================================================
+// 31. Cursor
+// ==========================================================================
+
+@cursor-default: default;
+@cursor-pointer: pointer;
+@cursor-help: help;
+@cursor-move: move;
+@cursor-not-allowed: not-allowed;
+@cursor-wait: wait;
+@cursor-text: text;
+@cursor-grab: grab;
+@cursor-grabbing: grabbing;
+
+
+// ==========================================================================
+// 32. Overflow
+// ==========================================================================
+
+@overflow-auto: auto;
+@overflow-hidden: hidden;
+@overflow-visible: visible;
+@overflow-scroll: scroll;
+@overflow-clip: clip;
+
+
+// ==========================================================================
+// 33. Content Visibility
+// ==========================================================================
+
+@content-visibility-auto: auto;
+@content-visibility-hidden: hidden;
+@content-visibility-visible: visible;
+
+
+// ==========================================================================
+// 34. Scroll Behavior
+// ==========================================================================
+
+@scroll-behavior-auto: auto;
+@scroll-behavior-smooth: smooth;
+
+
+// ==========================================================================
+// 35. Object Fit
+// ==========================================================================
+
+@object-fit-contain: contain;
+@object-fit-cover: cover;
+@object-fit-fill: fill;
+@object-fit-none: none;
+@object-fit-scale-down: scale-down;
+
+
+// ==========================================================================
+// 36. Position
+// ==========================================================================
+
+@position-static: static;
+@position-relative: relative;
+@position-absolute: absolute;
+@position-fixed: fixed;
+@position-sticky: sticky;
+
+
+// ==========================================================================
+// 37. Common Widths
+// ==========================================================================
+
+@width-full: 100%;
+@width-screen: 100vw;
+@width-dynamic-screen: 100dvw;
+@width-min-screen: 100svw;
+@width-max-screen: 100lvw;
+
+@width-half: 50%;
+@width-third: 33.333333%;
+@width-quarter: 25%;
+
+
+// ==========================================================================
+// 38. Common Heights
+// ==========================================================================
+
+@height-full: 100%;
+@height-screen: 100vh;
+@height-dynamic-screen: 100dvh;
+@height-min-screen: 100svh;
+@height-max-screen: 100lvh;
+
+
+// ==========================================================================
+// 39. Readability
+// ==========================================================================
+
+@measure-xs: 30ch;
+@measure-sm: 45ch;
+@measure-md: 60ch;
+@measure-lg: 70ch;
+@measure-xl: 80ch;
+
+
+// ==========================================================================
+// 40. Accessibility
+// ==========================================================================
+
+@focus-visible-outline:
+    @focus-width solid @focus-color;
+
+@focus-visible-offset:
+    @focus-offset;
+
+
+// ==========================================================================
+// 41. Default Framework Values
+// ==========================================================================
+
+@default-spacing: @space-4;
+@default-radius: @radius-md;
+@default-border: @border-default;
+@default-shadow: @shadow-sm;
+
+@default-transition:
+    @transition-normal @transition-easing;
+
+@default-font-family:
+    @font-family-body;
+
+@default-font-size:
+    @font-size-body;
+
+@default-line-height:
+    @line-height-normal;
